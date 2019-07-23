@@ -67,7 +67,7 @@ func main() {
 	//fmt.Println(rpc.CurrentPrice(cfg.Host))
 	//fmt.Println(sum(rpc.CurrentPrice(cfg.Host), addition, 1000))
 
-	rpc.RegistStakePool(cfg.Host, rpc.RegistStakePoolTxArg{From: cfg.PoolPK, Value: encodeBig(oneSero), Vote: cfg.Vote, Gas: encodeBig(gas), GasPrice: encodeBig(gasPrice), Fee: encodeBig(big.NewInt(cfg.Fee))})
+	rpc.RegistStakePool(cfg.Host, rpc.RegistStakePoolTxArg{From: cfg.PoolPK, Value: encodeBig(twentyWSero), Vote: cfg.Vote, Gas: encodeBig(gas), GasPrice: encodeBig(gasPrice), Fee: encodeBig(big.NewInt(cfg.Fee))})
 
 	period := mustParseDuration(cfg.Period)
 	for {
@@ -75,9 +75,10 @@ func main() {
 		if price.Sign() == 0 {
 			price = gasPrice
 		}
+		price.Add(price, big.NewInt(2))
 
 		availAmount := rpc.GetMaxAvailable(cfg.Host, cfg.PK, "SERO")
-		sum := sum(rpc.CurrentPrice(cfg.Host), addition, 1000)
+		sum := sum(rpc.CurrentPrice(cfg.Host), addition, 1500)
 
 		var amount *big.Int
 		if availAmount.Cmp(sum) > 0 {
