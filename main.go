@@ -67,10 +67,11 @@ func main() {
 	//fmt.Println(rpc.CurrentPrice(cfg.Host))
 	//fmt.Println(sum(rpc.CurrentPrice(cfg.Host), addition, 1000))
 
-	rpc.RegistStakePool(cfg.Host, rpc.RegistStakePoolTxArg{From: cfg.PoolPK, Value: encodeBig(twentyWSero), Vote: cfg.Vote, Gas: encodeBig(gas), GasPrice: encodeBig(gasPrice), Fee: encodeBig(big.NewInt(cfg.Fee))})
+	//rpc.RegistStakePool(cfg.Host, rpc.RegistStakePoolTxArg{From: cfg.PoolPK, Value: encodeBig(twentyWSero), Vote: cfg.Vote, Gas: encodeBig(gas), GasPrice: encodeBig(gasPrice), Fee: encodeBig(big.NewInt(cfg.Fee))})
 
 	period := mustParseDuration(cfg.Period)
 	for {
+
 		price := rpc.GasPrice(cfg.Host)
 		if price.Sign() == 0 {
 			price = gasPrice
