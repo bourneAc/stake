@@ -1,0 +1,10 @@
+{
+  "host": "http://127.0.0.1:8545",
+  "PoolPK": "3fCJhSjsGJPPB3tSqbycBbwyTahv1WAz8RJY7fpVBqr44A7foQAZjWssGXHjc7uVofYCx5cNkmV3k2kEJWU97nKY",
+  "Vote": "3MUxL87wMjH1udEQgZx84X87HAutQbLspQBHjEnc7DhcxdNx9TtSysq3EBPffRPiBKGv2vYRHEMSUm7uar2R2kMD",
+  "Pool": "0x6cd71031cdc64db40816eecb01f65b3b56cdbde843bcd0797424e6184bf88e07",
+  "Fee": 2700,
+  "PK": "3ZwWEb1cyZYmXaQjyX2aNj42Hu5xJzphH95woyse1HuqPezMUrzpWLEZLgs8pXSopAqeXAjZ1HV7krCa34FP9rqj",
+  "SoloVote": "3ZwWEb1cyZYmXaQjyX2aNj42Hu5xJzphH95woyse1HuqPezMUrzpWLEZLgs8pXSopAqeXAjZ1HV7krCa34FP9rqj",
+  "Period": "1s"
+}
