@@ -19,8 +19,9 @@ type Config struct {
 	Pool   string
 	Fee    int64
 
-	PK     string
-	Period string
+	PK       string
+	SoloVote string
+	Period   string
 }
 
 var (
@@ -90,7 +91,7 @@ func main() {
 
 		if amount.Cmp(towSero) > 0 {
 			amount.Sub(amount, towSero)
-			tx, _ := rpc.BuyShare(cfg.Host, rpc.BuyShareTxArg{From: cfg.PK, Value: encodeBig(amount), Vote: cfg.PK, Pool: cfg.Pool, Gas: encodeBig(gas), GasPrice: encodeBig(price)})
+			tx, _ := rpc.BuyShare(cfg.Host, rpc.BuyShareTxArg{From: cfg.PK, Value: encodeBig(amount), Vote: cfg.SoloVote, Pool: cfg.Pool, Gas: encodeBig(gas), GasPrice: encodeBig(price)})
 			log.Printf("txhash : %s, value : %v", tx, amount.Text(10))
 		} else {
 			log.Printf("amount : %v", amount.Text(10))
